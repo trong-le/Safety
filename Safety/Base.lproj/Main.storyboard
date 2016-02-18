@@ -218,11 +218,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR7-z8-iH7">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="xg8-4C-tAY"/>
-                                    <constraint firstAttribute="height" constant="200" id="ygl-dm-JGI"/>
+                                    <constraint firstAttribute="width" constant="250" id="FOE-3D-J6u"/>
+                                    <constraint firstAttribute="height" constant="250" id="KFf-qY-TMb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <state key="normal" title="Alert">
@@ -235,8 +235,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JR7-z8-iH7" firstAttribute="centerX" secondItem="bif-zF-R3C" secondAttribute="centerX" id="Sh4-px-96N"/>
-                            <constraint firstItem="JR7-z8-iH7" firstAttribute="centerY" secondItem="bif-zF-R3C" secondAttribute="centerY" id="Ube-Jj-Nd6"/>
+                            <constraint firstItem="JR7-z8-iH7" firstAttribute="centerX" secondItem="bif-zF-R3C" secondAttribute="centerX" id="6rb-iF-DiD"/>
+                            <constraint firstItem="JR7-z8-iH7" firstAttribute="centerY" secondItem="bif-zF-R3C" secondAttribute="centerY" id="d5m-tQ-SRN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notify Emergency Contacts" id="o2r-am-hgY"/>

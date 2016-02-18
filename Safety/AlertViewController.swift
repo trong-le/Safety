@@ -21,7 +21,7 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
     // Change button to circle
     @IBOutlet weak var alertButton: UIButton! {
         didSet {
-            alertButton.layer.cornerRadius = 100
+            alertButton.layer.cornerRadius = 125
         }
     }
     
@@ -48,7 +48,7 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
             messageVC.messageComposeDelegate = self
             
             messageVC.recipients = messageRecipients
-            messageVC.body = "Testing"
+            messageVC.body = "Help! I'm at \(latitude!), \(longitude!) and I'm in danger!"
             
             self.presentViewController(messageVC, animated: false, completion: nil)
         }
