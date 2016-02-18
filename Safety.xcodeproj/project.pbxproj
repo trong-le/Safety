@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F86AD4D81C765B89009D6835 /* Safety.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F86AD4D61C765B89009D6835 /* Safety.xcdatamodeld */; };
 		F87B7F4F1C6E9B130010AA26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F4E1C6E9B130010AA26 /* AppDelegate.swift */; };
 		F87B7F511C6E9B130010AA26 /* SaveContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F501C6E9B130010AA26 /* SaveContactViewController.swift */; };
 		F87B7F541C6E9B130010AA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87B7F521C6E9B130010AA26 /* Main.storyboard */; };
-		F87B7F571C6E9B130010AA26 /* Safety.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F551C6E9B130010AA26 /* Safety.xcdatamodeld */; };
 		F87B7F591C6E9B130010AA26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87B7F581C6E9B130010AA26 /* Assets.xcassets */; };
 		F87B7F5C1C6E9B130010AA26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87B7F5A1C6E9B130010AA26 /* LaunchScreen.storyboard */; };
 		F87B7F671C6E9B140010AA26 /* SafetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F661C6E9B140010AA26 /* SafetyTests.swift */; };
 		F87B7F721C6E9B140010AA26 /* SafetyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F711C6E9B140010AA26 /* SafetyUITests.swift */; };
-		F87B7F801C6E9B970010AA26 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F7F1C6E9B970010AA26 /* AlertViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F87B7F821C6EA9FD0010AA26 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F811C6EA9FD0010AA26 /* ContactListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F87B7F801C6E9B970010AA26 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F7F1C6E9B970010AA26 /* AlertViewController.swift */; };
+		F87B7F821C6EA9FD0010AA26 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B7F811C6EA9FD0010AA26 /* ContactListViewController.swift */; };
+		F87B7F841C763B4C0010AA26 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87B7F831C763B4C0010AA26 /* MapKit.framework */; };
+		F87B7F861C763BC60010AA26 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87B7F851C763BC60010AA26 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F86AD4D71C765B89009D6835 /* Safety.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Safety.xcdatamodel; sourceTree = "<group>"; };
 		F87B7F4B1C6E9B130010AA26 /* Safety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87B7F4E1C6E9B130010AA26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87B7F501C6E9B130010AA26 /* SaveContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveContactViewController.swift; sourceTree = "<group>"; };
 		F87B7F531C6E9B130010AA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F87B7F561C6E9B130010AA26 /* Safety.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Safety.xcdatamodel; sourceTree = "<group>"; };
 		F87B7F581C6E9B130010AA26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F87B7F5B1C6E9B130010AA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F87B7F5D1C6E9B130010AA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		F87B7F731C6E9B140010AA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F87B7F7F1C6E9B970010AA26 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		F87B7F811C6EA9FD0010AA26 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		F87B7F831C763B4C0010AA26 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F87B7F851C763BC60010AA26 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87B7F861C763BC60010AA26 /* CoreLocation.framework in Frameworks */,
+				F87B7F841C763B4C0010AA26 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,8 @@
 		F87B7F421C6E9B130010AA26 = {
 			isa = PBXGroup;
 			children = (
+				F87B7F851C763BC60010AA26 /* CoreLocation.framework */,
+				F87B7F831C763B4C0010AA26 /* MapKit.framework */,
 				F87B7F4D1C6E9B130010AA26 /* Safety */,
 				F87B7F651C6E9B140010AA26 /* SafetyTests */,
 				F87B7F701C6E9B140010AA26 /* SafetyUITests */,
@@ -111,7 +119,7 @@
 				F87B7F581C6E9B130010AA26 /* Assets.xcassets */,
 				F87B7F5A1C6E9B130010AA26 /* LaunchScreen.storyboard */,
 				F87B7F5D1C6E9B130010AA26 /* Info.plist */,
-				F87B7F551C6E9B130010AA26 /* Safety.xcdatamodeld */,
+				F86AD4D61C765B89009D6835 /* Safety.xcdatamodeld */,
 			);
 			path = Safety;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 				TargetAttributes = {
 					F87B7F4A1C6E9B130010AA26 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = B629LY9F4K;
 					};
 					F87B7F611C6E9B140010AA26 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -266,8 +275,8 @@
 			files = (
 				F87B7F511C6E9B130010AA26 /* SaveContactViewController.swift in Sources */,
 				F87B7F821C6EA9FD0010AA26 /* ContactListViewController.swift in Sources */,
+				F86AD4D81C765B89009D6835 /* Safety.xcdatamodeld in Sources */,
 				F87B7F4F1C6E9B130010AA26 /* AppDelegate.swift in Sources */,
-				F87B7F571C6E9B130010AA26 /* Safety.xcdatamodeld in Sources */,
 				F87B7F801C6E9B970010AA26 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,10 +419,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Safety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Trong.Le.Safety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -421,10 +433,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Safety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Trong.Le.Safety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -495,6 +510,7 @@
 				F87B7F781C6E9B140010AA26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F87B7F791C6E9B140010AA26 /* Build configuration list for PBXNativeTarget "SafetyTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +519,7 @@
 				F87B7F7B1C6E9B140010AA26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F87B7F7C1C6E9B140010AA26 /* Build configuration list for PBXNativeTarget "SafetyUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,16 +528,17 @@
 				F87B7F7E1C6E9B140010AA26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F87B7F551C6E9B130010AA26 /* Safety.xcdatamodeld */ = {
+		F86AD4D61C765B89009D6835 /* Safety.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F87B7F561C6E9B130010AA26 /* Safety.xcdatamodel */,
+				F86AD4D71C765B89009D6835 /* Safety.xcdatamodel */,
 			);
-			currentVersion = F87B7F561C6E9B130010AA26 /* Safety.xcdatamodel */;
+			currentVersion = F86AD4D71C765B89009D6835 /* Safety.xcdatamodel */;
 			path = Safety.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

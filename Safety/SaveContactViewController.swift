@@ -55,6 +55,8 @@ class SaveContactViewController: UIViewController {
     // Dismiss keyboard when return is pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        self.phoneNumberField.resignFirstResponder()
+        self.emailField.resignFirstResponder()
         return true
     }
 

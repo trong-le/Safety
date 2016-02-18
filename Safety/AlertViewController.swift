@@ -9,8 +9,10 @@
 import UIKit
 import MessageUI
 import CoreData
+import MapKit
+import CoreLocation
 
-class AlertViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+class AlertViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
     
     var messageRecipients = [String]()
     var names = [String]()
@@ -24,9 +26,20 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
     }
     
     @IBAction func alertMessage(sender: UIButton) {
-        print(messageRecipients)
-        print(names)
-        print(emails)
+//        print(messageRecipients)
+//        print(names)
+//        print(emails)
+        
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.startUpdatingLocation()
+        let latitude = locationManager.location?.coordinate.latitude
+        let longitude = locationManager.location?.coordinate.longitude
+        print("\(latitude)  \(longitude)")
         
         // canSendText false because simulator
         if MFMessageComposeViewController.canSendText() {

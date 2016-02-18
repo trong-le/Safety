@@ -23,7 +23,7 @@ class ContactListViewController: UIViewController {
     
     
     func updateContactList() {
-        if  names.count != 0 {
+        if  names.count > 0 {
             contactOne.setTitle(names[0], forState: UIControlState.Normal)
         }
         if names.count > 1 {
@@ -54,17 +54,18 @@ class ContactListViewController: UIViewController {
             let data = try managedContext.executeFetchRequest(fetchRequest)
             
             // Add phone numbers to message recipients array
-            for index; index < data.count; index++ {
+            while index < data.count {
                 let contact = data[index] as! NSManagedObject
-                
                 let name = contact.valueForKey("name")
                 names.append(name as! String)
                 
                 let phone = contact.valueForKey("phoneNumber")
                 phoneNumbers.append(phone as! String)
-                print(index)
-                
+                //print(index)
+                index++
             }
+            print(index)
+            print(names)
             
             
         } catch {
@@ -74,11 +75,38 @@ class ContactListViewController: UIViewController {
 
     }
     
+    @IBAction func changeFirstContact(sender: UIButton) {
+        
+        var contact = NSManagedObject()
+        
+        // Get data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Initialize Fetch Request
+        let fetchRequest = NSFetchRequest(entityName: "Contact")
+        
+        do {
+            
+            let data = try managedContext.executeFetchRequest(fetchRequest)
+            
+            // Add phone numbers to message recipients array
+            contact = data[index] as! NSManagedObject
+            _ = contact.valueForKey("name")
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        //let contactID = contact.objectID
+        //let predicate = NSPredicate(format: "ObjectID == \(contactID)", objectIDFromNSManagedObject)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
+        //fetchData()
         
         updateContactList()
         
