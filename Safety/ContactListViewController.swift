@@ -61,11 +61,8 @@ class ContactListViewController: UIViewController {
                 
                 let phone = contact.valueForKey("phoneNumber")
                 phoneNumbers.append(phone as! String)
-                //print(index)
                 index++
             }
-            print(index)
-            print(names)
             
             
         } catch {
@@ -105,10 +102,6 @@ class ContactListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //fetchData()
-        
-        updateContactList()
         
     }
     
