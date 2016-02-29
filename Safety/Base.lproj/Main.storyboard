@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="170" width="560" height="30"/>
                                 <state key="normal" title="Click to add contact"/>
                                 <connections>
-                                    <segue destination="VHa-NB-rtT" kind="show" id="nJz-qd-po9">
+                                    <segue destination="VHa-NB-rtT" kind="show" identifier="contactTwo" id="nJz-qd-po9">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -39,7 +39,7 @@
                                 <rect key="frame" x="20" y="220" width="560" height="30"/>
                                 <state key="normal" title="Click to add contact"/>
                                 <connections>
-                                    <segue destination="VHa-NB-rtT" kind="show" id="ebw-uo-x6z">
+                                    <segue destination="VHa-NB-rtT" kind="show" identifier="contactThree" id="ebw-uo-x6z">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -48,7 +48,7 @@
                                 <rect key="frame" x="20" y="270" width="560" height="30"/>
                                 <state key="normal" title="Click to add contact"/>
                                 <connections>
-                                    <segue destination="VHa-NB-rtT" kind="show" id="M8R-g0-1w9">
+                                    <segue destination="VHa-NB-rtT" kind="show" identifier="contactFour" id="M8R-g0-1w9">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="20" y="320" width="560" height="30"/>
                                 <state key="normal" title="Click to add contact"/>
                                 <connections>
-                                    <segue destination="VHa-NB-rtT" kind="show" id="AQo-vQ-vWa">
+                                    <segue destination="VHa-NB-rtT" kind="show" identifier="contactFive" id="AQo-vQ-vWa">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -287,6 +287,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xpe-X2-ooN"/>
+        <segue reference="AQo-vQ-vWa"/>
     </inferredMetricsTieBreakers>
 </document>

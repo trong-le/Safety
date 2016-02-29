@@ -120,14 +120,20 @@ class ContactListViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "contactOne" && !names[0].isEmpty {
-            print(names[0])
-            let savedContacts = segue.destinationViewController as! SaveContactViewController
-            savedContacts.setNameText = names[0]
-            
-            
+        if let savedContacts = segue.destinationViewController as? SaveContactViewController {
+            if segue.identifier == "contactOne" && names.count > 0 {
+                savedContacts.setNameText = names[0]
+            } else if segue.identifier == "contactTwo" && names.count > 1 {
+                savedContacts.setNameText = names[1]
+            } else if segue.identifier == "contactThree" && names.count > 2 {
+                savedContacts.setNameText = names[2]
+            } else if segue.identifier == "contactFour" && names.count > 3 {
+                savedContacts.setNameText = names[3]
+            } else if segue.identifier == "contactFive" && names.count > 4 {
+                savedContacts.setNameText = names[4]
+            }
         }
+        
     }
     
 
