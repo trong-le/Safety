@@ -11,6 +11,7 @@ import CoreData
 
 class SaveContactViewController: UIViewController {
     
+    var setNameText: String?
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -18,6 +19,10 @@ class SaveContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if (setNameText?.isEmpty == false) {
+            nameField.text = setNameText
+        }
         
     }
     
@@ -59,6 +64,8 @@ class SaveContactViewController: UIViewController {
         self.emailField.resignFirstResponder()
         return true
     }
+    
+    
 
 
 }

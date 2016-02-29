@@ -72,32 +72,32 @@ class ContactListViewController: UIViewController {
 
     }
     
-    @IBAction func changeFirstContact(sender: UIButton) {
-        
-        var contact = NSManagedObject()
-        
-        // Get data
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        
-        // Initialize Fetch Request
-        let fetchRequest = NSFetchRequest(entityName: "Contact")
-        
-        do {
-            
-            let data = try managedContext.executeFetchRequest(fetchRequest)
-            
-            // Add phone numbers to message recipients array
-            contact = data[index] as! NSManagedObject
-            _ = contact.valueForKey("name")
-            
-        } catch {
-            let fetchError = error as NSError
-            print(fetchError)
-        }
-        //let contactID = contact.objectID
-        //let predicate = NSPredicate(format: "ObjectID == \(contactID)", objectIDFromNSManagedObject)
-    }
+//    @IBAction func changeFirstContact(sender: UIButton) {
+//        
+//        var contact = NSManagedObject()
+//        
+//        // Get data
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let managedContext = appDelegate.managedObjectContext
+//        
+//        // Initialize Fetch Request
+//        let fetchRequest = NSFetchRequest(entityName: "Contact")
+//        
+//        do {
+//            
+//            let data = try managedContext.executeFetchRequest(fetchRequest)
+//            
+//            // Add phone numbers to message recipients array
+//            contact = data[index] as! NSManagedObject
+//            _ = contact.valueForKey("name")
+//            
+//        } catch {
+//            let fetchError = error as NSError
+//            print(fetchError)
+//        }
+//        //let contactID = contact.objectID
+//        //let predicate = NSPredicate(format: "ObjectID == \(contactID)", objectIDFromNSManagedObject)
+//    }
     
     
     override func viewDidLoad() {
@@ -113,14 +113,22 @@ class ContactListViewController: UIViewController {
         updateContactList()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "contactOne" && !names[0].isEmpty {
+            print(names[0])
+            let savedContacts = segue.destinationViewController as! SaveContactViewController
+            savedContacts.setNameText = names[0]
+            
+            
+        }
     }
-    */
+    
 
 }

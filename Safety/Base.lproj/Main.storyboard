@@ -21,8 +21,7 @@
                                 <rect key="frame" x="20" y="120" width="560" height="30"/>
                                 <state key="normal" title="Click to add contact"/>
                                 <connections>
-                                    <action selector="changeFirstContact:" destination="vcF-Ht-naR" eventType="touchUpInside" id="9xW-xK-nGS"/>
-                                    <segue destination="VHa-NB-rtT" kind="show" id="xpe-X2-ooN">
+                                    <segue destination="VHa-NB-rtT" kind="show" identifier="contactOne" id="xpe-X2-ooN">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
