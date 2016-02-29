@@ -13,6 +13,7 @@ class ContactListViewController: UIViewController {
     
     var names = [String]()
     var phoneNumbers = [String]()
+    var emails = [String]()
     var index = 0
     
     @IBOutlet weak var contactOne: UIButton!
@@ -61,6 +62,9 @@ class ContactListViewController: UIViewController {
                 
                 let phone = contact.valueForKey("phoneNumber")
                 phoneNumbers.append(phone as! String)
+                
+                let email = contact.valueForKey("email")
+                emails.append(email as! String)
                 index++
             }
             
@@ -116,21 +120,71 @@ class ContactListViewController: UIViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // Pass values to SaveContactVC and populate values if not nil
         if let savedContacts = segue.destinationViewController as? SaveContactViewController {
-            if segue.identifier == "contactOne" && names.count > 0 {
-                savedContacts.setNameText = names[0]
-            } else if segue.identifier == "contactTwo" && names.count > 1 {
-                savedContacts.setNameText = names[1]
-            } else if segue.identifier == "contactThree" && names.count > 2 {
-                savedContacts.setNameText = names[2]
-            } else if segue.identifier == "contactFour" && names.count > 3 {
-                savedContacts.setNameText = names[3]
-            } else if segue.identifier == "contactFive" && names.count > 4 {
-                savedContacts.setNameText = names[4]
+            
+            switch segue.identifier! {
+            case "contactOne":
+                if names.count > 0 {
+                    savedContacts.setNameText = names[0]
+                }
+                
+                if phoneNumbers.count > 0 {
+                    savedContacts.setNumberText = phoneNumbers[0]
+                }
+                
+                if emails.count > 0 {
+                    savedContacts.setEmailText = emails[0]
+                }
+                
+            case "contactTwo":
+                if names.count > 1 {
+                    savedContacts.setNameText = names[1]
+                }
+                if phoneNumbers.count > 1 {
+                    savedContacts.setNumberText = phoneNumbers[1]
+                }
+                if emails.count > 1 {
+                    savedContacts.setEmailText = emails[1]
+                }
+            
+            case "contactThree":
+                if names.count > 2 {
+                    savedContacts.setNameText = names[2]
+                }
+                if phoneNumbers.count > 2 {
+                    savedContacts.setNumberText = phoneNumbers[2]
+                }
+                if emails.count > 2 {
+                    savedContacts.setEmailText = emails[2]
+                }
+            
+            case "contactFour":
+                if names.count > 3 && phoneNumbers.count > 3 && emails.count > 3 {
+                    savedContacts.setNameText = names[3]
+                }
+                if phoneNumbers.count > 3 {
+                    savedContacts.setNumberText = phoneNumbers[3]
+                }
+                if emails.count > 3 {
+                    savedContacts.setEmailText = emails[3]
+                }
+                
+            case "contactFive":
+                if names.count > 4 {
+                    savedContacts.setNameText = names[4]
+                }
+                if phoneNumbers.count > 4 {
+                    savedContacts.setNumberText = phoneNumbers[4]
+                }
+                if emails.count > 4 {
+                    savedContacts.setEmailText = emails[4]
+                }
+                
+            default:
+                break
             }
         }
         
