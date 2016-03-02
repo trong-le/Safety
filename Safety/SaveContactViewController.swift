@@ -22,8 +22,8 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // Update text fields if there's a contact
         phoneNumberField.delegate = self
         
         if (setNameText?.isEmpty == false) {
@@ -62,6 +62,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
             do {
                 
                 do {
+                    // Update existing contact or create new one
                     let data = try managedContext.executeFetchRequest(fetchRequest)
                     if contactIndex != nil && contactIndex < data.count - 1 {
                         let contact = data[contactIndex!] as! NSManagedObject
@@ -75,8 +76,8 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
                         contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")
                         contact.setValue(emailField.text, forKey: "email")
                     }
-                } catch {
-                    print("Could not fetch or retrieve entity")
+                } catch let error as NSError {
+                    print(error)
                 }
             }
             do {

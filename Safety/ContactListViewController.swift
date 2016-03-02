@@ -22,7 +22,7 @@ class ContactListViewController: UIViewController {
     @IBOutlet weak var contactFour: UIButton!
     @IBOutlet weak var contactFive: UIButton!
     
-    
+    // Set names for each contact if not empty
     func updateContactList() {
         if  names.count > 0 {
             contactOne.setTitle(names[0], forState: UIControlState.Normal)
@@ -41,9 +41,8 @@ class ContactListViewController: UIViewController {
         }
     }
     
-    
+    // Retrieve data
     func fetchData() {
-        // Get data
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
@@ -82,20 +81,13 @@ class ContactListViewController: UIViewController {
         
     }
 
+    // Update contact list
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         fetchData()
         updateContactList()
     }
-    
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        fetchData()
-//        
-//        updateContactList()
-//    }
 
     
     // MARK: - Navigation
