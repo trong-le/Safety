@@ -15,6 +15,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     var setNumberText: String?
     var setEmailText: String?
     var contactIndex: Int?
+    var newContact: Bool?
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -62,7 +63,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
                 
                 do {
                     let data = try managedContext.executeFetchRequest(fetchRequest)
-                    if contactIndex != nil {
+                    if contactIndex != nil && contactIndex < data.count - 1 {
                         let contact = data[contactIndex!] as! NSManagedObject
                         contact.setValue(nameField.text!, forKey: "name")
                         contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")

@@ -81,14 +81,21 @@ class ContactListViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         fetchData()
-        
         updateContactList()
     }
+    
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        fetchData()
+//        
+//        updateContactList()
+//    }
 
     
     // MARK: - Navigation
