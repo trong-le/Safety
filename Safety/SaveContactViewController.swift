@@ -14,6 +14,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     var setNameText: String?
     var setNumberText: String?
     var setEmailText: String?
+    var contactIndex: Int?
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -41,21 +42,42 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     // Save contact information
     @IBAction func saveContact(sender: UIButton) {
         
+        // Alert box
         let alert = UIAlertController(title: "Empty Fields Detected", message: "Must populate all boxes to continue.", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Exit", style: .Default, handler: nil))
         
+        // Alert if empty text values found
         if (nameField.text?.isEmpty == true || phoneNumberField.text?.isEmpty == true || emailField.text?.isEmpty == true) {
             presentViewController(alert, animated: true, completion: nil)
-        } else {
+        }
+        
+        // Add values to Contact entity
+        else {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Contact", inManagedObjectContext: managedContext)
             
-            let contact = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            contact.setValue(nameField.text!, forKey: "name")
-            contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")
-            contact.setValue(emailField.text, forKey: "email")
+            let fetchRequest = NSFetchRequest(entityName: "Contact")
             
+            do {
+                
+                do {
+                    let data = try managedContext.executeFetchRequest(fetchRequest)
+                    if contactIndex != nil {
+                        let contact = data[contactIndex!] as! NSManagedObject
+                        contact.setValue(nameField.text!, forKey: "name")
+                        contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")
+                        contact.setValue(emailField.text, forKey: "email")
+                    } else {
+                        let entity = NSEntityDescription.entityForName("Contact", inManagedObjectContext: managedContext)
+                        let contact = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                        contact.setValue(nameField.text!, forKey: "name")
+                        contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")
+                        contact.setValue(emailField.text, forKey: "email")
+                    }
+                } catch {
+                    print("Could not fetch or retrieve entity")
+                }
+            }
             do {
                 try managedContext.save()
                 

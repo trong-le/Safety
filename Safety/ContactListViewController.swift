@@ -76,33 +76,6 @@ class ContactListViewController: UIViewController {
 
     }
     
-//    @IBAction func changeFirstContact(sender: UIButton) {
-//        
-//        var contact = NSManagedObject()
-//        
-//        // Get data
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        let managedContext = appDelegate.managedObjectContext
-//        
-//        // Initialize Fetch Request
-//        let fetchRequest = NSFetchRequest(entityName: "Contact")
-//        
-//        do {
-//            
-//            let data = try managedContext.executeFetchRequest(fetchRequest)
-//            
-//            // Add phone numbers to message recipients array
-//            contact = data[index] as! NSManagedObject
-//            _ = contact.valueForKey("name")
-//            
-//        } catch {
-//            let fetchError = error as NSError
-//            print(fetchError)
-//        }
-//        //let contactID = contact.objectID
-//        //let predicate = NSPredicate(format: "ObjectID == \(contactID)", objectIDFromNSManagedObject)
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,15 +103,14 @@ class ContactListViewController: UIViewController {
                 if names.count > 0 {
                     savedContacts.setNameText = names[0]
                 }
-                
                 if phoneNumbers.count > 0 {
                     savedContacts.setNumberText = phoneNumbers[0]
                 }
-                
                 if emails.count > 0 {
                     savedContacts.setEmailText = emails[0]
                 }
                 
+                savedContacts.contactIndex = 0
             case "contactTwo":
                 if names.count > 1 {
                     savedContacts.setNameText = names[1]
@@ -149,7 +121,8 @@ class ContactListViewController: UIViewController {
                 if emails.count > 1 {
                     savedContacts.setEmailText = emails[1]
                 }
-            
+                
+                savedContacts.contactIndex = 1
             case "contactThree":
                 if names.count > 2 {
                     savedContacts.setNameText = names[2]
@@ -160,7 +133,8 @@ class ContactListViewController: UIViewController {
                 if emails.count > 2 {
                     savedContacts.setEmailText = emails[2]
                 }
-            
+                
+                savedContacts.contactIndex = 2
             case "contactFour":
                 if names.count > 3 && phoneNumbers.count > 3 && emails.count > 3 {
                     savedContacts.setNameText = names[3]
@@ -172,6 +146,7 @@ class ContactListViewController: UIViewController {
                     savedContacts.setEmailText = emails[3]
                 }
                 
+                savedContacts.contactIndex = 3
             case "contactFive":
                 if names.count > 4 {
                     savedContacts.setNameText = names[4]
@@ -183,6 +158,7 @@ class ContactListViewController: UIViewController {
                     savedContacts.setEmailText = emails[4]
                 }
                 
+                savedContacts.contactIndex = 4
             default:
                 break
             }
