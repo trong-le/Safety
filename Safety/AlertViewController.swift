@@ -17,6 +17,9 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
     var messageRecipients = [String]()
     var names = [String]()
     var emails = [String]()
+    var locationManager = CLLocationManager()
+    var latitude: CLLocationDegrees!
+    var longitude: CLLocationDegrees!
     
     // Change button to circle
     @IBOutlet weak var alertButton: UIButton! {
@@ -26,29 +29,21 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
     }
     
     @IBAction func alertMessage(sender: UIButton) {
-//        print(messageRecipients)
-//        print(names)
-//        print(emails)
-        
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
         locationManager.startUpdatingLocation()
-        let latitude = locationManager.location?.coordinate.latitude
-        let longitude = locationManager.location?.coordinate.longitude
+        latitude = locationManager.location?.coordinate.latitude
+        longitude = locationManager.location?.coordinate.longitude
         print("\(latitude)  \(longitude)")
         
         // canSendText false because simulator
         if MFMessageComposeViewController.canSendText() {
+            
             print("Can send text")
             let messageVC = MFMessageComposeViewController()
             messageVC.messageComposeDelegate = self
             
             messageVC.recipients = messageRecipients
-            messageVC.body = "Help! I'm at \(latitude!), \(longitude!) and I'm in danger!"
+            messageVC.body = "Help! I'm at \(latitude), \(longitude) and I'm in danger!"
             
             self.presentViewController(messageVC, animated: false, completion: nil)
         }
@@ -69,6 +64,11 @@ class AlertViewController: UIViewController, MFMessageComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
         // Get data
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

@@ -64,7 +64,8 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
                 do {
                     // Update existing contact or create new one
                     let data = try managedContext.executeFetchRequest(fetchRequest)
-                    if contactIndex != nil && contactIndex < data.count - 1 {
+                    
+                    if contactIndex != nil && data.count > 0 && contactIndex! < data.count {
                         let contact = data[contactIndex!] as! NSManagedObject
                         contact.setValue(nameField.text!, forKey: "name")
                         contact.setValue(phoneNumberField.text!, forKey: "phoneNumber")
